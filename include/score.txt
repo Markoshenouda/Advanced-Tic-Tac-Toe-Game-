@@ -1,0 +1,8 @@
+mariam	marko	mariam
+mariam	Computer	Computer
+mariam	Computer	DRAW
+mariam	Computer	Computer
+mariam	Computer	mariam
+mariam	Computer	mariam
+mariam	Computer	mariam
+

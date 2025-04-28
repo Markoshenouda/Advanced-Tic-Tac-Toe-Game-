@@ -1,0 +1,15 @@
+05:26:50 **** Incremental Build of configuration Debug for project text ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o game_logic.o "..\\game_logic.cpp" 
+..\game_logic.cpp: In static member function 'static void GameLogic::clearScreen()':
+..\game_logic.cpp:22:12: warning: comparison with string literal results in unspecified behavior [-Waddress]
+   22 |     if (OS == "nt") system("cls");
+      |            ^
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o game_ui.o "..\\game_ui.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o leaderboard.o "..\\leaderboard.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o ai_logic.o "..\\ai_logic.cpp" 
+g++ -o text.exe ai_logic.o game_logic.o game_ui.o leaderboard.o main.o 
+Info: Nothing to build for text
+Info: Nothing to build for text
+Info: Nothing to build for text

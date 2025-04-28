@@ -1,0 +1,35 @@
+!SESSION 2025-04-28 04:39:06.983 -----------------------------------------------
+eclipse.buildId=4.32.0.20240606-1231
+java.version=22.0.1
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2025-04-28 04:39:43.322
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Mariam Samy'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-04-28 04:40:18.218
+!MESSAGE Indexed 'text' (0 sources, 0 headers) in 0.002 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 4 0 2025-04-28 04:47:41.584
+!MESSAGE Unexpected overload for binary operator 28: 'operator =='
+
+!ENTRY org.eclipse.cdt.core 4 0 2025-04-28 04:47:41.586
+!MESSAGE Unexpected overload for binary operator 28: 'operator =='
+
+!ENTRY org.eclipse.cdt.core 4 0 2025-04-28 04:47:41.587
+!MESSAGE Unexpected overload for binary operator 28: 'operator =='
+
+!ENTRY org.eclipse.cdt.core 4 0 2025-04-28 04:47:41.589
+!MESSAGE Unexpected overload for binary operator 28: 'operator =='
+
+!ENTRY org.eclipse.cdt.core 4 0 2025-04-28 04:47:41.594
+!MESSAGE Unexpected overload for binary operator 28: 'operator =='
+
+!ENTRY org.eclipse.cdt.core 4 0 2025-04-28 04:47:41.598
+!MESSAGE Unexpected overload for binary operator 28: 'operator =='

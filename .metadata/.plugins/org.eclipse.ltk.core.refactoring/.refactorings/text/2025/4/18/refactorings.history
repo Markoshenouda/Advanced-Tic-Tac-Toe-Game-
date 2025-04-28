@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;text/game_logic.cpp&apos; to &apos;game_logic.h&apos;" description="Rename resource &apos;game_logic.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="game_logic.cpp" name="game_logic.h" stamp="1745804709187" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;text/constants.h&apos; to &apos;game_constants.h&apos;" description="Rename resource &apos;constants.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="constants.h" name="game_constants.h" stamp="1745805206800" updateReferences="true"/>
+</session>
