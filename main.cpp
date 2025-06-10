@@ -1,11 +1,7 @@
-/*
- * main.cpp
- *
- *  Created on: Apr 28, 2025
- *      Author: Mariam Samy
- */
-#include "game_ui.h"
+#include "User.h"
+#include "UserManager.h"
 #include "game_logic.h"
+#include "game_ui.h"
 #include "ai_logic.h"
 #include "leaderboard.h"
 #include "game_constants.h"
@@ -13,6 +9,7 @@
 #include <vector>
 #include <cstdlib>
 #include <ctime>
+#include <fstream>
 #include <limits>
 
 using namespace std;
@@ -25,9 +22,42 @@ int main() {
 
     srand(time(NULL));
 
+    string username, password;
+    int authChoice;
+
+    cout << "1. Register\n2. Login\nChoose option: ";
+    cin >> authChoice;
+    cout << "Enter username: ";
+    cin >> username;
+    cout << "Enter password: ";
+    cin >> password;
+
+    bool loggedIn = false;
+
+    if (authChoice == 1) {
+        if (UserManager::registerUser(User(username, password))) {
+            cout << "Registered successfully!\n";
+            loggedIn = true;
+        } else {
+            cout << "Username already exists.\n";
+        }
+    } else if (authChoice == 2) {
+        if (UserManager::loginUser(username, password)) {
+            cout << "Login successful!\n";
+            loggedIn = true;
+        } else {
+            cout << "Invalid credentials.\n";
+        }
+    } else {
+        cout << "Invalid option.\n";
+        return 0;
+    }
+
+    if (!loggedIn) return 0;
+
     char x, o;
     int choice;
-    string u1, u2;
+    string u1 = username, u2;
     int menuChoice;
     vector<char> board(9);
     char playAgain;
@@ -53,8 +83,6 @@ int main() {
         }
 
         GameLogic::clearScreen();
-        cout << " " << person << " Enter name of player 1: ";
-        cin >> u1;
 
         if (menuChoice == 1) {
             cout << " " << person << " Enter name of player 2: ";
@@ -81,6 +109,9 @@ int main() {
             int currentPlayer = 1;
             int score = -1;
 
+            ofstream history("history.txt", ios::app);
+            history << "\nMatch: " << u1 << " vs " << u2 << "\n";
+
             while (score == -1) {
                 GameLogic::displayColorfulBoard(x, o, u1, u2, board);
 
@@ -104,20 +135,28 @@ int main() {
 
                 usedMoves.push_back(choice);
                 board[choice-1] = (currentPlayer == 1) ? x : o;
+
+                history << (currentPlayer == 1 ? u1 : u2) << " played " << choice << "\n";
+
                 score = GameLogic::checkWin(board);
                 currentPlayer = (currentPlayer % 2) + 1;
             }
 
             GameLogic::displayColorfulBoard(x, o, u1, u2, board);
 
+            string winner;
             if (score == 1) {
-                string winner = (currentPlayer == 1) ? u2 : u1;
+                winner = (currentPlayer == 1) ? u2 : u1;
                 cout << GREEN << "\n " << trophy << " " << winner << " wins! " << trophy << "\n" << RESET;
-                Leaderboard::updateLeaderboard(u1, u2, winner);
             } else {
+                winner = "DRAW";
                 cout << YELLOW << "\n " << handshake << " It's a draw! " << handshake << "\n" << RESET;
-                Leaderboard::updateLeaderboard(u1, u2, "DRAW");
             }
+
+            Leaderboard::updateLeaderboard(u1, u2, winner);
+            history << "Result: " << winner << "\n";
+            history << "-----------------------------\n";
+            history.close();
 
             cout << "\n " << star << " Play again with same players? (y/n): ";
             cin >> playAgain;
@@ -126,6 +165,3 @@ int main() {
 
     return 0;
 }
-
-
-
