@@ -1,30 +1,25 @@
-/*
- * leaderboard.cpp
- *
- *  Created on: Apr 28, 2025
- *      Author: Mariam Samy
- */
 #include "leaderboard.h"
 #include "game_constants.h"
 #include "game_logic.h"
 #include <iostream>
 #include <fstream>
-
 #include <iomanip>
 #include <map>
 #include <vector>
+#include <algorithm>
 
 using namespace std;
 
 void Leaderboard::showLeaderboard() {
     GameLogic::clearScreen();
     cout << GOLD << BOLD << "\n\t" << trophy << " LEADERBOARD " << trophy << RESET << "\n\n";
-    cout << " " << string(50, '=') << "\n";
-    cout << " " << setw(20) << left << "PLAYER"
+    cout << " " << string(60, '=') << "\n";
+    cout << " " << setw(6) << left << "RANK"
+         << setw(20) << left << "PLAYER"
          << setw(10) << "WINS"
          << setw(10) << "LOSSES"
          << setw(10) << "DRAWS" << "\n";
-    cout << " " << string(50, '=') << "\n";
+    cout << " " << string(60, '=') << "\n";
 
     ifstream scoreFile("score.txt");
     if (!scoreFile) {
@@ -59,16 +54,40 @@ void Leaderboard::showLeaderboard() {
         }
     }
 
-    for (const auto& entry : stats) {
-        cout << " " << setw(20) << left << entry.first << "  "
-             << setw(10) << GREEN << entry.second[0] << RESET
-             << setw(20) << RED << entry.second[1] << RESET
-             << setw(20) << YELLOW << entry.second[2] << RESET
-             << endl;
-    }
+    vector<pair<string, vector<int>>> sortedStats(stats.begin(), stats.end());
+
+    sort(sortedStats.begin(), sortedStats.end(), [](const auto& a, const auto& b) {
+        if (a.second[0] != b.second[0])
+            return a.second[0] > b.second[0];
+        return a.second[1] < b.second[1];
+    });
+
+    int rank = 1;
+for (const auto& entry : sortedStats) {
+    string rankLabel;
+    if (rank < 10)
+        rankLabel = " " + to_string(rank) + ".";
+    else
+        rankLabel = to_string(rank) + ".";
+
+    int wins = entry.second[0];
+    int losses = entry.second[1];
+    int draws = entry.second[2];
+
+    cout << " " << setw(6) << left << rankLabel
+         << setw(20) << left << entry.first << "  ";
+
+    cout << GREEN   << setw(10) << right << wins << RESET;
+    cout << RED     << setw(10) << right << losses << RESET;
+    cout << YELLOW  << setw(10) << right << draws << RESET;
+
+    cout << "\n";
+    rank++;
+}
+
 
     scoreFile.close();
-    cout << " " << string(50, '=') << endl;
+    cout << " " << string(60, '=') << endl;
     cout << "\n " << star << " Press Enter to continue...";
     cin.ignore();
     cin.get();
@@ -80,6 +99,3 @@ void Leaderboard::updateLeaderboard(const string &player1, const string &player2
     scoreFile << player1 << "\t" << player2 << "\t" << result << "\n";
     scoreFile.close();
 }
-
-
-
