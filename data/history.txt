@@ -7,3 +7,62 @@ toom played 7
 rana123 played 9
 Result: rana123
 -----------------------------
+
+Match: marko vs Computer
+marko played 1
+Computer played 3
+marko played 5
+Computer played 6
+marko played 9
+Result: marko
+-----------------------------
+
+Match: marko vs Computer
+marko played 1
+Computer played 5
+marko played 9
+Computer played 2
+marko played 8
+Computer played 4
+marko played 7
+Result: marko
+-----------------------------
+
+Match: marko vs Computer
+marko played 1
+Computer played 8
+marko played 5
+Computer played 2
+marko played 9
+Result: marko
+-----------------------------
+
+Match: marko vs Computer
+marko played 1
+Computer played 5
+marko played 2
+Computer played 3
+marko played 4
+Computer played 7
+Result: Computer
+-----------------------------
+
+Match: marko vs Computer
+marko played 1
+Computer played 5
+marko played 2
+Computer played 3
+marko played 4
+Computer played 7
+Result: Computer
+-----------------------------
+
+Match: marko vs mark
+marko played 1
+mark played 5
+marko played 2
+mark played 3
+marko played 4
+mark played 7
+Result: mark
+-----------------------------
