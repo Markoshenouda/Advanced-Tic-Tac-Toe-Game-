@@ -24,6 +24,7 @@ int main() {
 
     string username, password;
     int authChoice;
+    string currentUser = "";
 
     cout << "1. Register\n2. Login\nChoose option: ";
     cin >> authChoice;
@@ -35,16 +36,16 @@ int main() {
     bool loggedIn = false;
 
     if (authChoice == 1) {
-        if (UserManager::registerUser(User(username, password))) {
+        if (UserManager::registerUser(username, password)) {
             cout << "Registered successfully!\n";
             loggedIn = true;
-        } else {
-            cout << "Username already exists.\n";
+            currentUser = username;
         }
     } else if (authChoice == 2) {
         if (UserManager::loginUser(username, password)) {
             cout << "Login successful!\n";
             loggedIn = true;
+            currentUser = username;
         } else {
             cout << "Invalid credentials.\n";
         }
@@ -57,7 +58,7 @@ int main() {
 
     char x, o;
     int choice;
-    string u1 = username, u2;
+    string u1 = currentUser, u2;
     int menuChoice;
     vector<char> board(9);
     char playAgain;
@@ -67,18 +68,86 @@ int main() {
         GameUI::showRules();
         GameUI::showMainMenu();
 
-        while (!(cin >> menuChoice) || menuChoice < 1 || menuChoice > 4) {
+        while (!(cin >> menuChoice) || menuChoice < 1 || menuChoice > 6) {
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            cout << RED << " " << warning << " Invalid input! Enter 1-4: " << RESET;
+            cout << RED << " " << warning << " Invalid input! Enter 1-6: " << RESET;
         }
 
         if (menuChoice == 4) {
             cout << "\n " << sparkle << " Thanks for playing! " << sparkle << "\n";
             break;
         }
+
         if (menuChoice == 3) {
             Leaderboard::showLeaderboard();
+            continue;
+        }
+
+        if (menuChoice == 5) {
+            string historyFile = currentUser + "_history.txt";
+            ifstream file(historyFile);
+            if (!file) {
+                cout << RED << "\n " << warning << " No history found for " << currentUser << ".\n" << RESET;
+            } else {
+                cout << CYAN << "\n 🗂️ " << BOLD << currentUser << "'s Game History:\n\n" << RESET;
+                string line;
+                while (getline(file, line)) {
+                    cout << "  " << line << "\n";
+                }
+            }
+            cout << "\n " << star << " Press Enter to return to menu...";
+            cin.ignore();
+            cin.get();
+            continue;
+        }
+
+        if (menuChoice == 6) {
+            string historyFile = currentUser + "_history.txt";
+            ifstream file(historyFile);
+            if (!file) {
+                cout << RED << "\n " << warning << " No history found.\n" << RESET;
+                continue;
+            }
+
+            vector<string> allLines;
+            string line;
+            while (getline(file, line)) {
+                if (!line.empty()) allLines.push_back(line);
+            }
+
+            // Extract last match
+            vector<string> lastMatch;
+            for (int i = allLines.size() - 1; i >= 0; --i) {
+                if (allLines[i].find("Match:") != string::npos && !lastMatch.empty()) break;
+                lastMatch.insert(lastMatch.begin(), allLines[i]);
+            }
+
+            if (lastMatch.empty()) {
+                cout << RED << "No completed match to replay.\n" << RESET;
+                continue;
+            }
+
+            // Setup board
+            vector<char> replayBoard = {'1','2','3','4','5','6','7','8','9'};
+            GameLogic::clearScreen();
+            cout << CYAN << "\n 🎬 Replaying last match:\n" << RESET;
+            for (string &entry : lastMatch) {
+                if (entry.find("played") != string::npos) {
+                    string player = entry.substr(0, entry.find(" played"));
+                    int pos = stoi(entry.substr(entry.find("played") + 7));
+                    char symbol = (player == currentUser) ? 'X' : 'O';
+                    replayBoard[pos - 1] = symbol;
+                    GameLogic::displayColorfulBoard('X', 'O', currentUser, "Computer", replayBoard);
+                    GameLogic::wait(1000);
+                } else if (entry.find("Result:") != string::npos) {
+                    cout << GREEN << "\n 🏁 " << entry << "\n" << RESET;
+                }
+            }
+
+            cout << "\n " << star << " Press Enter to return to menu...";
+            cin.ignore();
+            cin.get();
             continue;
         }
 
@@ -109,7 +178,8 @@ int main() {
             int currentPlayer = 1;
             int score = -1;
 
-            ofstream history("history.txt", ios::app);
+            string historyFile = currentUser + "_history.txt";
+            ofstream history(historyFile, ios::app);
             history << "\nMatch: " << u1 << " vs " << u2 << "\n";
 
             while (score == -1) {
@@ -136,6 +206,7 @@ int main() {
                 usedMoves.push_back(choice);
                 board[choice-1] = (currentPlayer == 1) ? x : o;
 
+                //ofstream history(historyFile, ios::app);
                 history << (currentPlayer == 1 ? u1 : u2) << " played " << choice << "\n";
 
                 score = GameLogic::checkWin(board);
@@ -154,6 +225,7 @@ int main() {
             }
 
             Leaderboard::updateLeaderboard(u1, u2, winner);
+            //ofstream history(historyFile, ios::app);
             history << "Result: " << winner << "\n";
             history << "-----------------------------\n";
             history.close();

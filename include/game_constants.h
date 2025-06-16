@@ -3,6 +3,8 @@
  *
  *  Created on: Apr 28, 2025
  *      Author: Mariam Samy
+ *   Edited on: Jun 15, 2025
+ *      Editor: Rana Youssef
  */
 
 #ifndef GAME_CONSTANTS_H
@@ -35,6 +37,8 @@ const std::string link = u8"🔗";
 const std::string clockIcon = u8"⏱ ";
 const std::string confetti = u8"🎊";
 const std::string rainbow = u8"🌈";
+const std::string book = u8"📖";
+const std::string tree = u8"🌳";
 
 // Color Codes
 const std::string RED = "\033[38;5;196m";
@@ -46,6 +50,9 @@ const std::string CYAN = "\033[38;5;51m";
 const std::string PINK = "\033[38;5;201m";
 const std::string ORANGE = "\033[38;5;208m";
 const std::string GOLD = "\033[38;5;220m";
+const std::string MAGENTA = "\033[38;5;135m";
+
+
 
 // Board Design Elements
 const std::string horizontalLine = u8"───────────────";

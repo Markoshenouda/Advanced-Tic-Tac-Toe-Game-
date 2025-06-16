@@ -1,0 +1,9 @@
+
+Match: rana vs Computer
+rana played 1
+Computer played 4
+rana played 9
+Computer played 7
+rana played 5
+Result: rana
+-----------------------------

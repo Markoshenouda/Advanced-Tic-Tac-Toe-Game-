@@ -1,36 +1,68 @@
-#include "UserManager.h"
-#include <fstream>
-#include <sstream>
+/*
+ * UserManager.cpp
+ * Rana's Login & Register System with Hashing + Duplicate Check
+ */
 
-bool UserManager::registerUser(const User& user) {
-    std::ifstream infile("users.txt");
-    std::string line;
+#include "UserManager.h"
+#include "game_constants.h"
+#include <fstream>
+#include <string>
+#include <functional> // for std::hash
+#include <iostream>
+
+using namespace std;
+
+// ✅ دالة لتشفير الباسورد
+string UserManager::hashPassword(const string& password) {
+    hash<string> hasher;
+    return to_string(hasher(password));
+}
+
+// ✅ تسجيل مستخدم جديد: يمنع التكرار + يشفر الباسورد
+bool UserManager::registerUser(const string& username, const string& password) {
+    ifstream infile("users.txt");
+    string line;
+
     while (getline(infile, line)) {
-        std::stringstream ss(line);
-        std::string existingUsername;
-        getline(ss, existingUsername, ',');
-        if (existingUsername == user.username) {
-            return false;
+        size_t delimPos = line.find(':');
+        if (delimPos != string::npos) {
+            string storedUser = line.substr(0, delimPos);
+            if (storedUser == username) {
+                cout << RED << "Username already exists!\n" << RESET;
+                return false;
+            }
         }
     }
+
     infile.close();
 
-    std::ofstream outfile("users.txt", std::ios::app);
-    outfile << user.username << "," << user.password << "\n";
+    ofstream outfile("users.txt", ios::app);
+    outfile << username << ":" << hashPassword(password) << "\n";
+    outfile.close();
+
+    cout << GREEN << "Registration successful!\n" << RESET;
     return true;
 }
 
-bool UserManager::loginUser(const std::string& username, const std::string& password) {
-    std::ifstream infile("users.txt");
-    std::string line;
+// ✅ تسجيل دخول المستخدم: يتحقق من الاسم والباسورد المشفر
+bool UserManager::loginUser(const string& username, const string& password) {
+    ifstream infile("users.txt");
+    string line;
+    string hashed = hashPassword(password);
+
     while (getline(infile, line)) {
-        std::stringstream ss(line);
-        std::string storedUsername, storedPassword;
-        getline(ss, storedUsername, ',');
-        getline(ss, storedPassword);
-        if (storedUsername == username && storedPassword == password) {
+        size_t delimPos = line.find(':');
+        if (delimPos == string::npos) continue;
+
+        string storedUser = line.substr(0, delimPos);
+        string storedHash = line.substr(delimPos + 1);
+
+        if (storedUser == username && storedHash == hashed) {
+            cout << GREEN << "Login successful!\n" << RESET;
             return true;
         }
     }
+
+    cout << RED << "Invalid credentials.\n" << RESET;
     return false;
 }

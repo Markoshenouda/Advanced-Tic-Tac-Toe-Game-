@@ -7,9 +7,10 @@ mariam	Computer	mariam
 mariam	Computer	mariam
 
 rana123	toom	rana123
-marko	Computer	marko
-marko	Computer	marko
-marko	Computer	marko
-marko	Computer	Computer
-marko	Computer	Computer
-marko	mark	mark
+rana123	Computer	DRAW
+rana123	Computer	rana123
+rana123	Computer	rana123
+rana123	Computer	DRAW
+rana123	Computer	DRAW
+rana123	Computer	rana123
+rana	Computer	rana

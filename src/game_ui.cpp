@@ -1,9 +1,3 @@
-/*
- * game_ui.cpp
- *
- *  Created on: Apr 28, 2025
- *      Author: Mariam Samy
- */
 #include "game_ui.h"
 #include "game_constants.h"
 #include "game_logic.h"
@@ -36,13 +30,14 @@ void GameUI::showRules() {
 void GameUI::showMainMenu() {
     GameLogic::clearScreen();
     cout << CYAN << BOLD << "\n\t" << rainbow << " THE MAIN MENU " << rainbow << RESET << "\n\n";
-    cout << " " << person << " " << PINK << "1. Human vs Human\n" << RESET;
-    cout << " " << robot << " " << BLUE << "2. Human vs Computer\n" << RESET;
-    cout << " " << trophy << " " << YELLOW << "3. Leaderboard\n" << RESET;
-    cout << " " << warning << " " << RED << "4. Exit Game\n\n" << RESET;
-    cout << " " << check << " Enter choice (1-4): ";
+    cout << " " << person    << " " << PINK    << "1. Human vs Human\n"      << RESET;
+    cout << " " << robot     << " " << BLUE    << "2. Human vs Computer\n"   << RESET;
+    cout << " " << trophy    << " " << YELLOW  << "3. Leaderboard\n"         << RESET;
+    cout << " " << warning   << " " << RED     << "4. Exit Game\n"           << RESET;
+    cout << " " << book      << " " << MAGENTA << "5. View My History\n"     << RESET;
+    cout << " " << tree     << " " << BLUE << "6. Replay My Last Match\n" << RESET;
+    cout << "\n " << check   << " Enter choice (1-6): ";
 }
-
 bool GameUI::selectSymbol(char &x, char &o, const string &u1) {
     char dec;
     cout << " " << u1 << ", choose " << crossIcon << " (X) or " << circleIcon << " (O): ";
@@ -56,6 +51,4 @@ bool GameUI::selectSymbol(char &x, char &o, const string &u1) {
     o = (x == 'X') ? 'O' : 'X';
     return true;
 }
-
-
 
