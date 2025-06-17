@@ -1,10 +1,10 @@
-#include "include/User.h"
-#include "include/UserManager.h"
-#include "include/game_logic.h"
-#include "include/game_ui.h"
-#include "include/ai_logic.h"
-#include "include/leaderboard.h"
-#include "include/game_constants.h"
+#include "../include/User.h"
+#include "../include/UserManager.h"
+#include "../include/game_logic.h"
+#include "../include/game_ui.h"
+#include "../include/ai_logic.h"
+#include "../include/leaderboard.h"
+#include "../include/game_constants.h"
 #include <iostream>
 #include <vector>
 #include <cstdlib>
