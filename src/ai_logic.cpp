@@ -1,5 +1,5 @@
-#include "ai_logic.h"
-#include "game_logic.h"
+#include "../include/ai_logic.h"
+#include "../include/game_logic.h"
 #include <iostream>
 #include <algorithm>
 #include <vector>
