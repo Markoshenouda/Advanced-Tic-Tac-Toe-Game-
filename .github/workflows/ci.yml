@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build-and-test:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Qt environment
+        run: |
+          # Set the Qt installation path
+          $env:QTDIR = "C:\\Qt\\6.7.0\\msvc2019_64"
+
+          # Add Qt binaries to PATH
+          $env:Path += ";${env:QTDIR}\\bin"
+
+      - name: Build the application
+        run: |
+          cd TicTacToe_performance
+          & "${env:QTDIR}\\bin\\qmake.exe" Qt-Tic-Tac-Toe.pro
+          nmake
+
+      - name: Run the application
+        run: |
+          cd TicTacToe_performance/build
+          .\\Qt-Tic-Tac-Toe.exe
+
+      - name: Build and run tests
+        run: |
+          cd Qt-Tic-Tac-Toe-community/TicTacToeTest
+          & "${env:QTDIR}\\bin\\qmake.exe" TicTacToeTest.pro
+          nmake
+
+          cd build
+          .\\TicTacToeTest.exe
