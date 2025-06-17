@@ -1,41 +1,26 @@
-name: CI
+name: CI - Build and Test Tic Tac Toe
 
-on:
-  push:
-  pull_request:
+on: [push, pull_request]
 
 jobs:
   build-and-test:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      - name: 📥 Checkout code
+        uses: actions/checkout@v3
 
-      - name: Set up Qt environment
+      - name: ⚙️ Install dependencies
+        run: sudo apt-get update && sudo apt-get install -y qtbase5-dev g++ cmake libgtest-dev
+
+      - name: 🏗️ Build project
         run: |
-          # Set the Qt installation path
-          $env:QTDIR = "C:\\Qt\\6.7.0\\msvc2019_64"
-
-          # Add Qt binaries to PATH
-          $env:Path += ";${env:QTDIR}\\bin"
-
-      - name: Build the application
-        run: |
-          cd TicTacToe_performance
-          & "${env:QTDIR}\\bin\\qmake.exe" Qt-Tic-Tac-Toe.pro
-          nmake
-
-      - name: Run the application
-        run: |
-          cd TicTacToe_performance/build
-          .\\Qt-Tic-Tac-Toe.exe
-
-      - name: Build and run tests
-        run: |
-          cd Qt-Tic-Tac-Toe-community/TicTacToeTest
-          & "${env:QTDIR}\\bin\\qmake.exe" TicTacToeTest.pro
-          nmake
-
+          mkdir build
           cd build
-          .\\TicTacToeTest.exe
+          cmake ..
+          make
+
+      - name: 🧪 Run Google Tests
+        run: |
+          cd build
+          ctest --output-on-failure
