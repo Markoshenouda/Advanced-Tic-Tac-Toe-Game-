@@ -1,24 +1,25 @@
-cmake_minimum_required(VERSION 3.26)
-project(New_folder)
+# Minimum required version of CMake
+cmake_minimum_required(VERSION 3.10)
 
-set(CMAKE_CXX_STANDARD 14)
+# Project name
+project(TicTacToe)
 
-include_directories(.)
+# Use C++17 standard
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
+
+# Set include directory for header files
 include_directories(include)
-include_directories(src)
 
-add_executable(New_folder
-        include/User.h
-        include/UserManger.h
-        include/game_constants.h 
-        include/game_logic.h
-        include/game_ui.h
-        include/leaderboard.h
-        include/ai_logic.h
-        src/User.cpp
-        src/UserManager.cpp
-        src/ai_logic.cpp
-        src/game_logic.cpp
-        src/game_ui.cpp
-        src/leaderboard.cpp
-)
+# Collect all .cpp source files inside src/
+file(GLOB SOURCES "src/*.cpp")
+
+# Add the executable using the collected source files
+add_executable(TicTacToe ${SOURCES})
+
+# (Optional) Show all warnings
+if (CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
+    target_compile_options(TicTacToe PRIVATE -Wall -Wextra -pedantic)
+elseif (MSVC)
+    target_compile_options(TicTacToe PRIVATE /W4)
+endif()
