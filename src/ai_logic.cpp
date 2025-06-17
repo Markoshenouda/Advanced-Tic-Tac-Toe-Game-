@@ -7,7 +7,7 @@
 #include <chrono>
 #include <memory> // For std::unique_ptr
 #include <cstdlib> // For rand()
-#include "game_constants.h"
+#include "../include/game_constants.h"
 
 using namespace std;
 
