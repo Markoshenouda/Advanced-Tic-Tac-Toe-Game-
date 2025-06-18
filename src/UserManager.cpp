@@ -3,13 +3,8 @@
  * Rana's Login & Register System with Hashing + Duplicate Check
  */
 
-/*
- * UserManager.cpp
- * Rana's Login & Register System with Hashing + Duplicate Check
- */
-
-#include "../include/UserManager.h"
-#include "../include/game_constants.h"
+#include "UserManager.h"
+#include "game_constants.h"
 #include <fstream>
 #include <string>
 #include <functional> // for std::hash

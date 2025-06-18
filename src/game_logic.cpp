@@ -4,8 +4,8 @@
  *  Created on: Apr 28, 2025
  *      Author: Mariam Samy
  */
-#include "../include/game_logic.h"
-#include "../include/game_constants.h"
+#include "game_logic.h"
+#include "game_constants.h"
 #include <iostream>
 #include <thread>
 #include <cstdlib>
@@ -15,7 +15,6 @@
 #else
 #define OS "posix"
 #endif
-//test
 
 using namespace std;
 

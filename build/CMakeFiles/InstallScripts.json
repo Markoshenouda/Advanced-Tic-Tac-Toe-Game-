@@ -1,0 +1,10 @@
+{
+	"InstallScripts" : 
+	[
+		"/d/CUFE_TikTakToe/build/cmake_install.cmake",
+		"/d/CUFE_TikTakToe/build/googletest/cmake_install.cmake",
+		"/d/CUFE_TikTakToe/build/googletest/googlemock/cmake_install.cmake",
+		"/d/CUFE_TikTakToe/build/googletest/googletest/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

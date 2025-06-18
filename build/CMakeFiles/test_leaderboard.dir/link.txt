@@ -1,0 +1,1 @@
+/ucrt64/bin/c++.exe -Wl,--enable-auto-import CMakeFiles/test_leaderboard.dir/tests/leaderboard_test.cpp.o CMakeFiles/test_leaderboard.dir/src/leaderboard.cpp.o CMakeFiles/test_leaderboard.dir/src/game_logic.cpp.o -o test_leaderboard.exe -Wl,--out-implib,libtest_leaderboard.dll.a -Wl,--major-image-version,0,--minor-image-version,0  lib/libgtest.a lib/libgtest_main.a lib/libgtest.a
