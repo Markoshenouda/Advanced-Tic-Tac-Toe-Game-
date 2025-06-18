@@ -47,3 +47,27 @@ add_executable(test_ai
 )
 
 target_link_libraries(test_ai gtest gtest_main)
+
+add_executable(test_medium_ai
+    tests/medium_ai_test.cpp
+    src/ai_logic.cpp
+    src/game_logic.cpp
+)
+
+target_link_libraries(test_medium_ai gtest gtest_main)
+
+add_executable(test_hard_ai
+    tests/hard_ai_test.cpp
+    src/ai_logic.cpp
+    src/game_logic.cpp
+)
+
+target_link_libraries(test_hard_ai gtest gtest_main)
+
+add_executable(test_minimax
+    tests/minimax_test.cpp
+    src/ai_logic.cpp
+    src/game_logic.cpp
+)
+
+target_link_libraries(test_minimax gtest gtest_main)

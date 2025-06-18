@@ -3,6 +3,9 @@
 /d/CUFE_TikTakToe/build/CMakeFiles/test_history.dir
 /d/CUFE_TikTakToe/build/CMakeFiles/test_leaderboard.dir
 /d/CUFE_TikTakToe/build/CMakeFiles/test_ai.dir
+/d/CUFE_TikTakToe/build/CMakeFiles/test_medium_ai.dir
+/d/CUFE_TikTakToe/build/CMakeFiles/test_hard_ai.dir
+/d/CUFE_TikTakToe/build/CMakeFiles/test_minimax.dir
 /d/CUFE_TikTakToe/build/CMakeFiles/test.dir
 /d/CUFE_TikTakToe/build/CMakeFiles/edit_cache.dir
 /d/CUFE_TikTakToe/build/CMakeFiles/rebuild_cache.dir

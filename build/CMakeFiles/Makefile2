@@ -68,6 +68,9 @@ all: CMakeFiles/test_user_manager.dir/all
 all: CMakeFiles/test_history.dir/all
 all: CMakeFiles/test_leaderboard.dir/all
 all: CMakeFiles/test_ai.dir/all
+all: CMakeFiles/test_medium_ai.dir/all
+all: CMakeFiles/test_hard_ai.dir/all
+all: CMakeFiles/test_minimax.dir/all
 all: googletest/all
 .PHONY : all
 
@@ -77,6 +80,9 @@ codegen: CMakeFiles/test_user_manager.dir/codegen
 codegen: CMakeFiles/test_history.dir/codegen
 codegen: CMakeFiles/test_leaderboard.dir/codegen
 codegen: CMakeFiles/test_ai.dir/codegen
+codegen: CMakeFiles/test_medium_ai.dir/codegen
+codegen: CMakeFiles/test_hard_ai.dir/codegen
+codegen: CMakeFiles/test_minimax.dir/codegen
 codegen: googletest/codegen
 .PHONY : codegen
 
@@ -90,6 +96,9 @@ clean: CMakeFiles/test_user_manager.dir/clean
 clean: CMakeFiles/test_history.dir/clean
 clean: CMakeFiles/test_leaderboard.dir/clean
 clean: CMakeFiles/test_ai.dir/clean
+clean: CMakeFiles/test_medium_ai.dir/clean
+clean: CMakeFiles/test_hard_ai.dir/clean
+clean: CMakeFiles/test_minimax.dir/clean
 clean: googletest/clean
 .PHONY : clean
 
@@ -199,7 +208,7 @@ CMakeFiles/test_user_manager.dir/all: googletest/googletest/CMakeFiles/gtest.dir
 CMakeFiles/test_user_manager.dir/all: googletest/googletest/CMakeFiles/gtest_main.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_user_manager.dir/build.make CMakeFiles/test_user_manager.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_user_manager.dir/build.make CMakeFiles/test_user_manager.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/d/CUFE_TikTakToe/build/CMakeFiles --progress-num=27,28,29,30 "Built target test_user_manager"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/d/CUFE_TikTakToe/build/CMakeFiles --progress-num=39,40,41,42 "Built target test_user_manager"
 .PHONY : CMakeFiles/test_user_manager.dir/all
 
 # Build rule for subdir invocation for target.
@@ -216,7 +225,7 @@ test_user_manager: CMakeFiles/test_user_manager.dir/rule
 # codegen rule for target.
 CMakeFiles/test_user_manager.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_user_manager.dir/build.make CMakeFiles/test_user_manager.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/d/CUFE_TikTakToe/build/CMakeFiles --progress-num=27,28,29,30 "Finished codegen for target test_user_manager"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/d/CUFE_TikTakToe/build/CMakeFiles --progress-num=39,40,41,42 "Finished codegen for target test_user_manager"
 .PHONY : CMakeFiles/test_user_manager.dir/codegen
 
 # clean rule for target.
@@ -232,7 +241,7 @@ CMakeFiles/test_history.dir/all: googletest/googletest/CMakeFiles/gtest.dir/all
 CMakeFiles/test_history.dir/all: googletest/googletest/CMakeFiles/gtest_main.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_history.dir/build.make CMakeFiles/test_history.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_history.dir/build.make CMakeFiles/test_history.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/d/CUFE_TikTakToe/build/CMakeFiles --progress-num=21,22 "Built target test_history"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/d/CUFE_TikTakToe/build/CMakeFiles --progress-num=25,26 "Built target test_history"
 .PHONY : CMakeFiles/test_history.dir/all
 
 # Build rule for subdir invocation for target.
@@ -249,7 +258,7 @@ test_history: CMakeFiles/test_history.dir/rule
 # codegen rule for target.
 CMakeFiles/test_history.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_history.dir/build.make CMakeFiles/test_history.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/d/CUFE_TikTakToe/build/CMakeFiles --progress-num=21,22 "Finished codegen for target test_history"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/d/CUFE_TikTakToe/build/CMakeFiles --progress-num=25,26 "Finished codegen for target test_history"
 .PHONY : CMakeFiles/test_history.dir/codegen
 
 # clean rule for target.
@@ -265,7 +274,7 @@ CMakeFiles/test_leaderboard.dir/all: googletest/googletest/CMakeFiles/gtest.dir/
 CMakeFiles/test_leaderboard.dir/all: googletest/googletest/CMakeFiles/gtest_main.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_leaderboard.dir/build.make CMakeFiles/test_leaderboard.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_leaderboard.dir/build.make CMakeFiles/test_leaderboard.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/d/CUFE_TikTakToe/build/CMakeFiles --progress-num=23,24,25,26 "Built target test_leaderboard"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/d/CUFE_TikTakToe/build/CMakeFiles --progress-num=27,28,29,30 "Built target test_leaderboard"
 .PHONY : CMakeFiles/test_leaderboard.dir/all
 
 # Build rule for subdir invocation for target.
@@ -282,7 +291,7 @@ test_leaderboard: CMakeFiles/test_leaderboard.dir/rule
 # codegen rule for target.
 CMakeFiles/test_leaderboard.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_leaderboard.dir/build.make CMakeFiles/test_leaderboard.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/d/CUFE_TikTakToe/build/CMakeFiles --progress-num=23,24,25,26 "Finished codegen for target test_leaderboard"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/d/CUFE_TikTakToe/build/CMakeFiles --progress-num=27,28,29,30 "Finished codegen for target test_leaderboard"
 .PHONY : CMakeFiles/test_leaderboard.dir/codegen
 
 # clean rule for target.
@@ -322,6 +331,105 @@ CMakeFiles/test_ai.dir/codegen:
 CMakeFiles/test_ai.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ai.dir/build.make CMakeFiles/test_ai.dir/clean
 .PHONY : CMakeFiles/test_ai.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/test_medium_ai.dir
+
+# All Build rule for target.
+CMakeFiles/test_medium_ai.dir/all: googletest/googletest/CMakeFiles/gtest.dir/all
+CMakeFiles/test_medium_ai.dir/all: googletest/googletest/CMakeFiles/gtest_main.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_medium_ai.dir/build.make CMakeFiles/test_medium_ai.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_medium_ai.dir/build.make CMakeFiles/test_medium_ai.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/d/CUFE_TikTakToe/build/CMakeFiles --progress-num=31,32,33,34 "Built target test_medium_ai"
+.PHONY : CMakeFiles/test_medium_ai.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test_medium_ai.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /d/CUFE_TikTakToe/build/CMakeFiles 8
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/test_medium_ai.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /d/CUFE_TikTakToe/build/CMakeFiles 0
+.PHONY : CMakeFiles/test_medium_ai.dir/rule
+
+# Convenience name for target.
+test_medium_ai: CMakeFiles/test_medium_ai.dir/rule
+.PHONY : test_medium_ai
+
+# codegen rule for target.
+CMakeFiles/test_medium_ai.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_medium_ai.dir/build.make CMakeFiles/test_medium_ai.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/d/CUFE_TikTakToe/build/CMakeFiles --progress-num=31,32,33,34 "Finished codegen for target test_medium_ai"
+.PHONY : CMakeFiles/test_medium_ai.dir/codegen
+
+# clean rule for target.
+CMakeFiles/test_medium_ai.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_medium_ai.dir/build.make CMakeFiles/test_medium_ai.dir/clean
+.PHONY : CMakeFiles/test_medium_ai.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/test_hard_ai.dir
+
+# All Build rule for target.
+CMakeFiles/test_hard_ai.dir/all: googletest/googletest/CMakeFiles/gtest.dir/all
+CMakeFiles/test_hard_ai.dir/all: googletest/googletest/CMakeFiles/gtest_main.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_hard_ai.dir/build.make CMakeFiles/test_hard_ai.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_hard_ai.dir/build.make CMakeFiles/test_hard_ai.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/d/CUFE_TikTakToe/build/CMakeFiles --progress-num=21,22,23,24 "Built target test_hard_ai"
+.PHONY : CMakeFiles/test_hard_ai.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test_hard_ai.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /d/CUFE_TikTakToe/build/CMakeFiles 8
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/test_hard_ai.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /d/CUFE_TikTakToe/build/CMakeFiles 0
+.PHONY : CMakeFiles/test_hard_ai.dir/rule
+
+# Convenience name for target.
+test_hard_ai: CMakeFiles/test_hard_ai.dir/rule
+.PHONY : test_hard_ai
+
+# codegen rule for target.
+CMakeFiles/test_hard_ai.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_hard_ai.dir/build.make CMakeFiles/test_hard_ai.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/d/CUFE_TikTakToe/build/CMakeFiles --progress-num=21,22,23,24 "Finished codegen for target test_hard_ai"
+.PHONY : CMakeFiles/test_hard_ai.dir/codegen
+
+# clean rule for target.
+CMakeFiles/test_hard_ai.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_hard_ai.dir/build.make CMakeFiles/test_hard_ai.dir/clean
+.PHONY : CMakeFiles/test_hard_ai.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/test_minimax.dir
+
+# All Build rule for target.
+CMakeFiles/test_minimax.dir/all: googletest/googletest/CMakeFiles/gtest.dir/all
+CMakeFiles/test_minimax.dir/all: googletest/googletest/CMakeFiles/gtest_main.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_minimax.dir/build.make CMakeFiles/test_minimax.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_minimax.dir/build.make CMakeFiles/test_minimax.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/d/CUFE_TikTakToe/build/CMakeFiles --progress-num=35,36,37,38 "Built target test_minimax"
+.PHONY : CMakeFiles/test_minimax.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test_minimax.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /d/CUFE_TikTakToe/build/CMakeFiles 8
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/test_minimax.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /d/CUFE_TikTakToe/build/CMakeFiles 0
+.PHONY : CMakeFiles/test_minimax.dir/rule
+
+# Convenience name for target.
+test_minimax: CMakeFiles/test_minimax.dir/rule
+.PHONY : test_minimax
+
+# codegen rule for target.
+CMakeFiles/test_minimax.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_minimax.dir/build.make CMakeFiles/test_minimax.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/d/CUFE_TikTakToe/build/CMakeFiles --progress-num=35,36,37,38 "Finished codegen for target test_minimax"
+.PHONY : CMakeFiles/test_minimax.dir/codegen
+
+# clean rule for target.
+CMakeFiles/test_minimax.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_minimax.dir/build.make CMakeFiles/test_minimax.dir/clean
+.PHONY : CMakeFiles/test_minimax.dir/clean
 
 #=============================================================================
 # Target rules for target googletest/googlemock/CMakeFiles/gmock.dir

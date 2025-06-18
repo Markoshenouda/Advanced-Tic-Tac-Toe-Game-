@@ -237,6 +237,45 @@ test_ai/fast:
 .PHONY : test_ai/fast
 
 #=============================================================================
+# Target rules for targets named test_medium_ai
+
+# Build rule for target.
+test_medium_ai: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_medium_ai
+.PHONY : test_medium_ai
+
+# fast build rule for target.
+test_medium_ai/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_medium_ai.dir/build.make CMakeFiles/test_medium_ai.dir/build
+.PHONY : test_medium_ai/fast
+
+#=============================================================================
+# Target rules for targets named test_hard_ai
+
+# Build rule for target.
+test_hard_ai: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_hard_ai
+.PHONY : test_hard_ai
+
+# fast build rule for target.
+test_hard_ai/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_hard_ai.dir/build.make CMakeFiles/test_hard_ai.dir/build
+.PHONY : test_hard_ai/fast
+
+#=============================================================================
+# Target rules for targets named test_minimax
+
+# Build rule for target.
+test_minimax: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_minimax
+.PHONY : test_minimax
+
+# fast build rule for target.
+test_minimax/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_minimax.dir/build.make CMakeFiles/test_minimax.dir/build
+.PHONY : test_minimax/fast
+
+#=============================================================================
 # Target rules for targets named gmock
 
 # Build rule for target.
@@ -373,6 +412,9 @@ src/ai_logic.o: src/ai_logic.cpp.o
 src/ai_logic.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/ai_logic.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ai.dir/build.make CMakeFiles/test_ai.dir/src/ai_logic.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_medium_ai.dir/build.make CMakeFiles/test_medium_ai.dir/src/ai_logic.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_hard_ai.dir/build.make CMakeFiles/test_hard_ai.dir/src/ai_logic.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_minimax.dir/build.make CMakeFiles/test_minimax.dir/src/ai_logic.cpp.o
 .PHONY : src/ai_logic.cpp.o
 
 src/ai_logic.i: src/ai_logic.cpp.i
@@ -382,6 +424,9 @@ src/ai_logic.i: src/ai_logic.cpp.i
 src/ai_logic.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/ai_logic.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ai.dir/build.make CMakeFiles/test_ai.dir/src/ai_logic.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_medium_ai.dir/build.make CMakeFiles/test_medium_ai.dir/src/ai_logic.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_hard_ai.dir/build.make CMakeFiles/test_hard_ai.dir/src/ai_logic.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_minimax.dir/build.make CMakeFiles/test_minimax.dir/src/ai_logic.cpp.i
 .PHONY : src/ai_logic.cpp.i
 
 src/ai_logic.s: src/ai_logic.cpp.s
@@ -391,6 +436,9 @@ src/ai_logic.s: src/ai_logic.cpp.s
 src/ai_logic.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/ai_logic.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ai.dir/build.make CMakeFiles/test_ai.dir/src/ai_logic.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_medium_ai.dir/build.make CMakeFiles/test_medium_ai.dir/src/ai_logic.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_hard_ai.dir/build.make CMakeFiles/test_hard_ai.dir/src/ai_logic.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_minimax.dir/build.make CMakeFiles/test_minimax.dir/src/ai_logic.cpp.s
 .PHONY : src/ai_logic.cpp.s
 
 src/game_logic.o: src/game_logic.cpp.o
@@ -401,6 +449,9 @@ src/game_logic.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/game_logic.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_leaderboard.dir/build.make CMakeFiles/test_leaderboard.dir/src/game_logic.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ai.dir/build.make CMakeFiles/test_ai.dir/src/game_logic.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_medium_ai.dir/build.make CMakeFiles/test_medium_ai.dir/src/game_logic.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_hard_ai.dir/build.make CMakeFiles/test_hard_ai.dir/src/game_logic.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_minimax.dir/build.make CMakeFiles/test_minimax.dir/src/game_logic.cpp.o
 .PHONY : src/game_logic.cpp.o
 
 src/game_logic.i: src/game_logic.cpp.i
@@ -411,6 +462,9 @@ src/game_logic.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/game_logic.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_leaderboard.dir/build.make CMakeFiles/test_leaderboard.dir/src/game_logic.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ai.dir/build.make CMakeFiles/test_ai.dir/src/game_logic.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_medium_ai.dir/build.make CMakeFiles/test_medium_ai.dir/src/game_logic.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_hard_ai.dir/build.make CMakeFiles/test_hard_ai.dir/src/game_logic.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_minimax.dir/build.make CMakeFiles/test_minimax.dir/src/game_logic.cpp.i
 .PHONY : src/game_logic.cpp.i
 
 src/game_logic.s: src/game_logic.cpp.s
@@ -421,6 +475,9 @@ src/game_logic.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/game_logic.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_leaderboard.dir/build.make CMakeFiles/test_leaderboard.dir/src/game_logic.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ai.dir/build.make CMakeFiles/test_ai.dir/src/game_logic.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_medium_ai.dir/build.make CMakeFiles/test_medium_ai.dir/src/game_logic.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_hard_ai.dir/build.make CMakeFiles/test_hard_ai.dir/src/game_logic.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_minimax.dir/build.make CMakeFiles/test_minimax.dir/src/game_logic.cpp.s
 .PHONY : src/game_logic.cpp.s
 
 src/game_ui.o: src/game_ui.cpp.o
@@ -498,6 +555,30 @@ tests/ai_test.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ai.dir/build.make CMakeFiles/test_ai.dir/tests/ai_test.cpp.s
 .PHONY : tests/ai_test.cpp.s
 
+tests/hard_ai_test.o: tests/hard_ai_test.cpp.o
+.PHONY : tests/hard_ai_test.o
+
+# target to build an object file
+tests/hard_ai_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_hard_ai.dir/build.make CMakeFiles/test_hard_ai.dir/tests/hard_ai_test.cpp.o
+.PHONY : tests/hard_ai_test.cpp.o
+
+tests/hard_ai_test.i: tests/hard_ai_test.cpp.i
+.PHONY : tests/hard_ai_test.i
+
+# target to preprocess a source file
+tests/hard_ai_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_hard_ai.dir/build.make CMakeFiles/test_hard_ai.dir/tests/hard_ai_test.cpp.i
+.PHONY : tests/hard_ai_test.cpp.i
+
+tests/hard_ai_test.s: tests/hard_ai_test.cpp.s
+.PHONY : tests/hard_ai_test.s
+
+# target to generate assembly for a file
+tests/hard_ai_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_hard_ai.dir/build.make CMakeFiles/test_hard_ai.dir/tests/hard_ai_test.cpp.s
+.PHONY : tests/hard_ai_test.cpp.s
+
 tests/history_test.o: tests/history_test.cpp.o
 .PHONY : tests/history_test.o
 
@@ -546,6 +627,54 @@ tests/leaderboard_test.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_leaderboard.dir/build.make CMakeFiles/test_leaderboard.dir/tests/leaderboard_test.cpp.s
 .PHONY : tests/leaderboard_test.cpp.s
 
+tests/medium_ai_test.o: tests/medium_ai_test.cpp.o
+.PHONY : tests/medium_ai_test.o
+
+# target to build an object file
+tests/medium_ai_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_medium_ai.dir/build.make CMakeFiles/test_medium_ai.dir/tests/medium_ai_test.cpp.o
+.PHONY : tests/medium_ai_test.cpp.o
+
+tests/medium_ai_test.i: tests/medium_ai_test.cpp.i
+.PHONY : tests/medium_ai_test.i
+
+# target to preprocess a source file
+tests/medium_ai_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_medium_ai.dir/build.make CMakeFiles/test_medium_ai.dir/tests/medium_ai_test.cpp.i
+.PHONY : tests/medium_ai_test.cpp.i
+
+tests/medium_ai_test.s: tests/medium_ai_test.cpp.s
+.PHONY : tests/medium_ai_test.s
+
+# target to generate assembly for a file
+tests/medium_ai_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_medium_ai.dir/build.make CMakeFiles/test_medium_ai.dir/tests/medium_ai_test.cpp.s
+.PHONY : tests/medium_ai_test.cpp.s
+
+tests/minimax_test.o: tests/minimax_test.cpp.o
+.PHONY : tests/minimax_test.o
+
+# target to build an object file
+tests/minimax_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_minimax.dir/build.make CMakeFiles/test_minimax.dir/tests/minimax_test.cpp.o
+.PHONY : tests/minimax_test.cpp.o
+
+tests/minimax_test.i: tests/minimax_test.cpp.i
+.PHONY : tests/minimax_test.i
+
+# target to preprocess a source file
+tests/minimax_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_minimax.dir/build.make CMakeFiles/test_minimax.dir/tests/minimax_test.cpp.i
+.PHONY : tests/minimax_test.cpp.i
+
+tests/minimax_test.s: tests/minimax_test.cpp.s
+.PHONY : tests/minimax_test.s
+
+# target to generate assembly for a file
+tests/minimax_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_minimax.dir/build.make CMakeFiles/test_minimax.dir/tests/minimax_test.cpp.s
+.PHONY : tests/minimax_test.cpp.s
+
 tests/usermanager_test.o: tests/usermanager_test.cpp.o
 .PHONY : tests/usermanager_test.o
 
@@ -589,8 +718,11 @@ help:
 	@echo "... gtest"
 	@echo "... gtest_main"
 	@echo "... test_ai"
+	@echo "... test_hard_ai"
 	@echo "... test_history"
 	@echo "... test_leaderboard"
+	@echo "... test_medium_ai"
+	@echo "... test_minimax"
 	@echo "... test_user_manager"
 	@echo "... main.o"
 	@echo "... main.i"
@@ -616,12 +748,21 @@ help:
 	@echo "... tests/ai_test.o"
 	@echo "... tests/ai_test.i"
 	@echo "... tests/ai_test.s"
+	@echo "... tests/hard_ai_test.o"
+	@echo "... tests/hard_ai_test.i"
+	@echo "... tests/hard_ai_test.s"
 	@echo "... tests/history_test.o"
 	@echo "... tests/history_test.i"
 	@echo "... tests/history_test.s"
 	@echo "... tests/leaderboard_test.o"
 	@echo "... tests/leaderboard_test.i"
 	@echo "... tests/leaderboard_test.s"
+	@echo "... tests/medium_ai_test.o"
+	@echo "... tests/medium_ai_test.i"
+	@echo "... tests/medium_ai_test.s"
+	@echo "... tests/minimax_test.o"
+	@echo "... tests/minimax_test.i"
+	@echo "... tests/minimax_test.s"
 	@echo "... tests/usermanager_test.o"
 	@echo "... tests/usermanager_test.i"
 	@echo "... tests/usermanager_test.s"
