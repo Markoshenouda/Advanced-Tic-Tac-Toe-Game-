@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/d/CUFE_TikTakToe/src/ai_logic.cpp" "CMakeFiles/test_ai.dir/src/ai_logic.cpp.o" "gcc" "CMakeFiles/test_ai.dir/src/ai_logic.cpp.o.d"
+  "/d/CUFE_TikTakToe/src/game_logic.cpp" "CMakeFiles/test_ai.dir/src/game_logic.cpp.o" "gcc" "CMakeFiles/test_ai.dir/src/game_logic.cpp.o.d"
   "/d/CUFE_TikTakToe/tests/ai_test.cpp" "CMakeFiles/test_ai.dir/tests/ai_test.cpp.o" "gcc" "CMakeFiles/test_ai.dir/tests/ai_test.cpp.o.d"
   )
 

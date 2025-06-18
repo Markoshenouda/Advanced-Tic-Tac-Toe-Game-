@@ -400,6 +400,7 @@ src/game_logic.o: src/game_logic.cpp.o
 src/game_logic.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/game_logic.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_leaderboard.dir/build.make CMakeFiles/test_leaderboard.dir/src/game_logic.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ai.dir/build.make CMakeFiles/test_ai.dir/src/game_logic.cpp.o
 .PHONY : src/game_logic.cpp.o
 
 src/game_logic.i: src/game_logic.cpp.i
@@ -409,6 +410,7 @@ src/game_logic.i: src/game_logic.cpp.i
 src/game_logic.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/game_logic.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_leaderboard.dir/build.make CMakeFiles/test_leaderboard.dir/src/game_logic.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ai.dir/build.make CMakeFiles/test_ai.dir/src/game_logic.cpp.i
 .PHONY : src/game_logic.cpp.i
 
 src/game_logic.s: src/game_logic.cpp.s
@@ -418,6 +420,7 @@ src/game_logic.s: src/game_logic.cpp.s
 src/game_logic.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/game.dir/build.make CMakeFiles/game.dir/src/game_logic.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_leaderboard.dir/build.make CMakeFiles/test_leaderboard.dir/src/game_logic.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ai.dir/build.make CMakeFiles/test_ai.dir/src/game_logic.cpp.s
 .PHONY : src/game_logic.cpp.s
 
 src/game_ui.o: src/game_ui.cpp.o

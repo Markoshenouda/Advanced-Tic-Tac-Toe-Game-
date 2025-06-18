@@ -39,9 +39,11 @@ add_executable(test_leaderboard
 )
 
 target_link_libraries(test_leaderboard gtest gtest_main)
+
 add_executable(test_ai
     tests/ai_test.cpp
     src/ai_logic.cpp
+    src/game_logic.cpp      
 )
 
 target_link_libraries(test_ai gtest gtest_main)

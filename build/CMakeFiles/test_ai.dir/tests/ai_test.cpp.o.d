@@ -241,4 +241,10 @@ CMakeFiles/test_ai.dir/tests/ai_test.cpp.o: \
  D:/CUFE_TikTakToe/googletest/googletest/include/gtest/gtest_pred_impl.h \
  D:/CUFE_TikTakToe/googletest/googletest/include/gtest/gtest_prod.h \
  D:/CUFE_TikTakToe/include/ai_logic.h \
- D:/CUFE_TikTakToe/include/game_constants.h
+ D:/CUFE_TikTakToe/include/game_constants.h \
+ C:/msys64/ucrt64/include/c++/15.1.0/algorithm \
+ C:/msys64/ucrt64/include/c++/15.1.0/bits/stl_algo.h \
+ C:/msys64/ucrt64/include/c++/15.1.0/bits/algorithmfwd.h \
+ C:/msys64/ucrt64/include/c++/15.1.0/bits/stl_heap.h \
+ C:/msys64/ucrt64/include/c++/15.1.0/bits/uniform_int_dist.h \
+ C:/msys64/ucrt64/include/c++/15.1.0/pstl/glue_algorithm_defs.h

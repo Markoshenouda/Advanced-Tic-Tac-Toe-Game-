@@ -2,6 +2,8 @@
 #include <vector>
 #include <set>
 #include "../include/ai_logic.h"
+#include <algorithm>
+
 
 TEST(AITest, EasyAIChoosesValidMove) {
     std::vector<char> board = {'1','2','3','4','5','6','7','8','9'};
